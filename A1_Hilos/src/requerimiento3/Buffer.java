@@ -1,4 +1,4 @@
-package requerimiento2;
+package requerimiento3;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -21,8 +21,14 @@ public class Buffer {
 			}
 		}
 		
-		//Añadimos un elemento a la cola
-		cola.offer(email);
+		//Añadir un elemento a la cola pero no si el destinatario es pikachu@gmail.com
+		if(email.getDestinatario().equals("pikachu@gmail.com")) {
+			System.out.println("NO ESTÁ PERMITIDO ENVIAR CORREOS A PIKACHU!!! -> Su mensaje con id=" +email.getId()+ " ha sido descartado");
+		}
+		else {
+			cola.offer(email);	
+		}
+		
 		//Notify, notificamos a todos los hilos que esten en estado wait que
 		//despierten(tanto los de addMensaje como los de getMensaje)
 		notify();
