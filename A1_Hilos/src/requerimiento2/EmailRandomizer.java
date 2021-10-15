@@ -3,11 +3,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class EmailRandomizer {
+public abstract class EmailRandomizer {
 	
+	//La variable ID debe ser un idetificador único
+	//Hacemos la clase abstracta para que no se pueda instanciar y hacemos
+	//el método generar email static y además synchronized para asegurar que solo
+	//un thread pueda modificar el contador de id.
 	private static int ID=1;	
 	
-	public Email generarEmail() {
+	//Este es el único método que pueden ver el resto de clases
+	//Al poner synchronized aseguramos que solo un hilo puede ejecutarlo a la vez
+	public static synchronized Email generarEmail() {
 		Email email = new Email();
 		email.setId(generarId());
 		email.setRemitente(generarRemitente());
@@ -17,13 +23,13 @@ public class EmailRandomizer {
 		return email;
 	}
 	
-	public int generarId() {
+	private static int generarId() {
 		int id = ID;
 		ID++;
 		return id;
 	}
 
-	public String generarRemitente() {
+	private static String generarRemitente() {
 		List<String> lista = new ArrayList<String>();
 		lista.add("arthasMenethil@lordaeron.com");
 		lista.add("thrallwarchief@orgrimmar.orc");
@@ -39,7 +45,7 @@ public class EmailRandomizer {
 		return lista.get(indice);
 	}
 	
-	public String generarDestinatario() {
+	private static String generarDestinatario() {
 		List<String> lista = new ArrayList<String>();
 		lista.add("arthasMenethil@lordaeron.com");
 		lista.add("thrallwarchief@orgrimmar.orc");
@@ -55,7 +61,7 @@ public class EmailRandomizer {
 		return lista.get(indice);
 	}
 	
-	public String generarAsunto() {
+	private static String generarAsunto() {
 		List<String> lista = new ArrayList<String>();
 		lista.add("TOO SOON!!");
 		lista.add("FOR THE HORDE!");
@@ -73,12 +79,13 @@ public class EmailRandomizer {
 		return lista.get(indice);
 	}
 	
-	public String generarMensaje() {
+	private static String generarMensaje() {
 		Random r = new Random();
 		int limiteInferior = 48; // numero '0'
 	    int limiteSuperior = 122; // letra 'z'
 	    StringBuilder mensaje = new StringBuilder();
 	    
+	    //Código para generar cadenas aleatorias de hasta 50 "palabras"
 	    for(int j=0;j<r.nextInt(51);j++) {
 		    int longitudString = r.nextInt(11);
 		    String aleatoriaString = r.ints(limiteInferior, limiteSuperior + 1)

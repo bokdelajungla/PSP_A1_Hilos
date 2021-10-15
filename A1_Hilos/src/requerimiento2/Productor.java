@@ -17,11 +17,17 @@ public class Productor implements Runnable{
 	public void run() {
 		// TODO Auto-generated method stub
 		// Genera 10 Emails
-		EmailRandomizer er = new EmailRandomizer();
 		for(int i=1;i <= 10;i++){
-			Email email = er.generarEmail(); 
-			System.out.println(this.nombre + " ha producido un correo " + email);
-			cola.addMensaje(email);
+			try {
+				Thread.sleep(500);
+				Email email = EmailRandomizer.generarEmail(); 
+				cola.addMensaje(email);
+				System.out.println(this.nombre + " ha producido un correo con id=" + email.getId());
+			}
+			catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	
