@@ -17,7 +17,7 @@ public class GeneradorCarta {
 		return carta;
 	}
 	
-	public String generarDestinatario() {
+	private String generarDestinatario() {
 		List<String> listaDestinatarios = new ArrayList<String>();
 		listaDestinatarios.add("njerg@gmail.com");
 		listaDestinatarios.add("ludens@gmail.com");
@@ -35,7 +35,7 @@ public class GeneradorCarta {
 		return listaDestinatarios.get(numero);
 	}
 	
-	public String generarRemitente() {
+	private String generarRemitente() {
 		List<String> listaRemitente = new ArrayList<String>();
 		listaRemitente.add("gilbert@gmail.com");
 		listaRemitente.add("darek@gmail.com");
@@ -48,7 +48,7 @@ public class GeneradorCarta {
 		return listaRemitente.get(numero);
 	}
 	
-	public String generarAsunto() {
+	private String generarAsunto() {
 		List<String> listaAsunto= new ArrayList<String>();
 		listaAsunto.add("Su póliza de seguro se renovará");
 		listaAsunto.add("Subscribase e Nintendo Switch Online");
@@ -61,7 +61,7 @@ public class GeneradorCarta {
 		return listaAsunto.get(numero);
 	}
 	
-	public String generarCuerpo() {
+	private String generarCuerpo() {
 		List<String> listaCuerpo= new ArrayList<String>();
 		listaCuerpo.add("Lorem Ipsum es simplemente el texto de relleno de las imprentas "
 				+ "y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar");
@@ -78,7 +78,7 @@ public class GeneradorCarta {
 		return listaCuerpo.get(numero);
 	}
 	
-	public int generarId() {
+	private int generarId() {
 		int numero = ThreadLocalRandom.current().nextInt(0, 10000);
 		return numero;
 	}
