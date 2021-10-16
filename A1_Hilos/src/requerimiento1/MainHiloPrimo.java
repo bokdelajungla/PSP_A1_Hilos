@@ -7,9 +7,11 @@ public class MainHiloPrimo {
 
 	public static void main(String[] args) {
 		
+		//Declaramos las variables para almacenar los numeros introducidos por el usuario
 		Scanner sc = new Scanner(System.in); 
 		long[] numero= new long[4];
 		
+		//Solicitamos los numeros al usuario
 		System.out.println("Introduzca 4 numeros para calcular si son primos:");
 		try {
 			for(int i=0; i<4; i++) {
@@ -22,6 +24,7 @@ public class MainHiloPrimo {
 		}
 		sc.close();
 		
+		//Creamos y lanzamos los 4 Hilos
 		new HiloPrimo(numero[0],"Alfa");
 		new HiloPrimo(numero[1],"Beta");
 		new HiloPrimo(numero[2],"Gamma");
@@ -29,4 +32,13 @@ public class MainHiloPrimo {
 		
 	}
 
+/* Algunos numeros primos grandes 
+ * 524287
+ * 2147483647
+ * 1111111111111111111
+ * 2305843009213693951
+ * 
+ * 	
+ */
+	
 }
