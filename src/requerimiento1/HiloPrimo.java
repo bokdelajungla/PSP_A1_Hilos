@@ -4,6 +4,23 @@ package requerimiento1;
 //import java.time.Duration;
 //import java.time.Instant;
 
+/**
+ * Clase que implementa un algoritmo para comprobar si un número es primo.
+ * Cuando se lanza el hilo este comprueba si el numero que se le pasa como argumento
+ * en el siguiente orden:
+ *  - si es 0, que no es primo.
+ *  - si es 1 o 2 que sí son primos.
+ *  - si es par, en cuyo caso no es primo.
+ *  - si es divisible entre los impares hasta que el cuadrado del divisor
+ *    sea mayor que el numero. Si no encuentra divisores, entonces es primo.
+ *    
+ * Una vez realizada la comprobación se muestra un mensaje con los resultados, indicando el
+ * nombre del hilo el numero y si es primo o no, y en caso de que no sea prima muestra el menor
+ * divisor del numero.
+ * 
+ * @author Jorge Sánchez-Alor 
+ *
+ */
 public class HiloPrimo implements Runnable{
 	
 	//Atributos
