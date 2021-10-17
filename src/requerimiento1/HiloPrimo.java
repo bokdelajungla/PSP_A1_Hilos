@@ -15,8 +15,8 @@ package requerimiento1;
  *    sea mayor que el numero. Si no encuentra divisores, entonces es primo.
  *    
  * Una vez realizada la comprobación se muestra un mensaje con los resultados, indicando el
- * nombre del hilo el numero y si es primo o no, y en caso de que no sea prima muestra el menor
- * divisor del numero.
+ * el numero, el nombre del hilo que lo ha procesado, el tiempo que ha tardado en procesarlo
+ * y si es primo o no, y en caso de que no sea primo muestra el menor divisor del numero.
  * 
  * @author Jorge Sánchez-Alor 
  *

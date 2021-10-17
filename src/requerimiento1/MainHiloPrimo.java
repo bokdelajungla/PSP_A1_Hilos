@@ -3,6 +3,14 @@ package requerimiento1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Clase que se encarga de solicitar la entrada de 4 numeros por teclaso al usuario
+ * para despues lanzar 4 hilos para que lleven a cabo la comprobacion de si son o no primos.
+ *  
+ * @author Jorge Sánchez-Alor
+ *
+ */
+
 public class MainHiloPrimo {
 
 	public static void main(String[] args) {
@@ -36,9 +44,7 @@ public class MainHiloPrimo {
  * 524287
  * 2147483647
  * 1111111111111111111
- * 2305843009213693951
- * 
- * 	
+ * 2305843009213693951 	
  */
 	
 }
