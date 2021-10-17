@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Clase de testeo para la clase EsPrimo
  * 
- * @author Adrian Rodriguez Montesinos
+ * @author Adrian Rodriguez Montesinos (Grupo 16)
  * @version 1.0
  *
  */
