@@ -1,5 +1,12 @@
 package requerimiento2;
-
+/**
+ * Clase que implementa un hilo que se encarga de generar 10 mensajes mediante {@link EmailRandomizer} 
+ * cada 0.5 segundos y pasarselos al Buffer. Cada vez que genera un correo muestra un mensaje con el 
+ * nombre del hilo que ha generado el mensaje y el {@link Email#getId()} del objeto Email.
+ * 
+ * @author Jorge Sánchez-Alor Expósito, Adrian Rodriguez Montesinos, Antonio De Gea Velasco
+ *
+ */
 public class Productor implements Runnable{
 	
 	private String nombre;

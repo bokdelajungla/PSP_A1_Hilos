@@ -1,5 +1,12 @@
 package requerimiento3;
 
+/**
+ * Clase que se encarga de simular el Requerimiento 3 creando: 1 Buffer para contener los Emails,
+ * 3 Productores que generaran mensajes y 2 Consumidores que recogen mensajes.
+ *  
+ * @author Jorge Sánchez-Alor Expósito, Adrian Rodriguez Montesinos, Antonio De Gea Velasco
+ * 
+ */
 public class Main {
 
 	public static void main(String[] args) {

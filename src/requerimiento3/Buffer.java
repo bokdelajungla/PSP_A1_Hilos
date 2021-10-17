@@ -1,5 +1,21 @@
 package requerimiento3;
 
+/**
+ * Clase que implementa la cola que almacena los Emails y que permite que los Productores depositen mensajes
+ * y Consumidores recojan mensajes. 
+ * En caso de que se llegue al máximo de capacidad indicará a los Productores que detengan su ejecución hasta que 
+ * se tenga espacio de nuevo.
+ * En caso de que no se tengan mensajes en la cola, indicará a los Consumidores que se detengan hasta que de nuevo
+ * tengamos elementos en la cola.
+ * 
+ * Además, si el destinatario del mensaje es "pikachu@gmail.com" el mensaje no se añadirá a la cola y se dará un aviso
+ * por pantalla de que el mensaje ha sido descartado.
+ * 
+ * 
+ * @author Jorge Sánchez-Alor Expósito, Adrian Rodriguez Montesinos, Antonio De Gea Velasco
+ *
+ */
+
 import java.util.LinkedList;
 import java.util.Queue;
 

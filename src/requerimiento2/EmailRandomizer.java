@@ -3,6 +3,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Clase que se encarga de generar los Emails para simular el envío por parte de los Productores.
+ * La clase es abstracta para que no se puedan generar instancias de ella, y posee un atributo privado 
+ * de clase {@link EmailRandomizer#ID}, que contiene el identificador de los Emails que se incrementa 
+ * cada vez que se crea un nuevo objeto. 
+ * Sin embargo, como tenemos varios hilos creando Emails, para garantizar la unicidad del ID
+ * tenemos que forzar que el método {@link EmailRandomizer#generarEmail()} sea synchronized, para que 
+ * sólo un hilo pueda ejecutarlo a la vez.
+ *
+ * @author Jorge Sánchez-Alor Expósito, Adrian Rodriguez Montesinos, Antonio De Gea Velasco
+ *
+ */
+
 public abstract class EmailRandomizer {
 	
 	//La variable ID debe ser un idetificador único
@@ -22,13 +35,22 @@ public abstract class EmailRandomizer {
 		email.setMensaje(generarMensaje());
 		return email;
 	}
-	
+	/**
+	 * El metodo le asigna la variable {@link EmailRandomizer#ID} de clase al nuevo objeto y luego la incrementa en 1
+	 * 
+	 * @return id un entero con el valor actual de la variable {@link EmailRandomizer#ID} 
+	 */
 	private static int generarId() {
 		int id = ID;
 		ID++;
 		return id;
 	}
 
+	/**
+	 * El metodo selecciona una direccion de correo de una lista de forma aleatoria.
+	 *  
+	 * @return remitente un String con la direccion de correo del emisor del mensaje
+	 */
 	private static String generarRemitente() {
 		List<String> lista = new ArrayList<String>();
 		lista.add("arthasMenethil@lordaeron.com");
@@ -45,6 +67,16 @@ public abstract class EmailRandomizer {
 		return lista.get(indice);
 	}
 	
+	/**
+	 * El metodo selecciona una direccion de correo de una lista de forma aleatoria.
+	 *  
+	 * @return destinatario un String con la direccion de correo del receptor del mensaje
+	 * 
+	 * NOTA: En este caso al ser las dos listas iguales, el funcionamiento es identico al de 
+	 * {@link EmailRandomizer#generarRemitente()} pero los destinatarios podrian ser diferentes
+	 * a los remitentes
+	 * 
+	 */
 	private static String generarDestinatario() {
 		List<String> lista = new ArrayList<String>();
 		lista.add("arthasMenethil@lordaeron.com");
@@ -61,6 +93,12 @@ public abstract class EmailRandomizer {
 		return lista.get(indice);
 	}
 	
+	/**
+	 * * El metodo selecciona un asunto para el correo de una lista de forma aleatoria.
+	 *  
+	 * @return asunto un String con el asunto del mensaje
+	 * 
+	 */
 	private static String generarAsunto() {
 		List<String> lista = new ArrayList<String>();
 		lista.add("TOO SOON!!");
@@ -79,6 +117,11 @@ public abstract class EmailRandomizer {
 		return lista.get(indice);
 	}
 	
+	/**
+	 * El metodo genera un mensaje aleatoria para el correo
+	 * 
+	 * @return mensaje un String con un mensaje generado de forma aleatoria
+	 */
 	private static String generarMensaje() {
 		Random r = new Random();
 		int limiteInferior = 48; // numero '0'

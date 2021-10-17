@@ -1,5 +1,17 @@
 package requerimiento3;
 
+/**
+ * Clase que representa un correo. Contiene toda la informción del correo electrónico:
+ * <ul><li>id: Identificador numérico único.</li>
+ * 	   <li>destinatario: direccion de correo del destinatario</li>
+ *     <li>remitente: direccion de correo del remitente</li>
+ *     <li>asunto: el asunto del correo</li>
+ *     <li>mensaje: el cuerpo del mensaje</li>
+ * Implementa Setter & Getters para los atributos y sobreescribe el método toString().
+ * 
+ * @author Jorge Sánchez-Alor Expósito, Adrian Rodriguez Montesinos, Antonio De Gea Velasco
+ * 
+ */
 public class Email {
 	
 	private int id;

@@ -3,12 +3,28 @@ package requerimiento2;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Clase que implementa la cola que almacena los Emails y que permite que los Productores depositen mensajes
+ * y Consumidores recojan mensajes. 
+ * En caso de que se llegue al máximo de capacidad indicará a los Productores que detengan su ejecución hasta que 
+ * se tenga espacio de nuevo.
+ * En caso de que no se tengan mensajes en la cola, indicará a los Consumidores que se detengan hasta que de nuevo
+ * tengamos elementos en la cola.
+ * 
+ * 
+ * @author Jorge Sánchez-Alor Expósito, Adrian Rodriguez Montesinos, Antonio De Gea Velasco
+ *
+ */
 public class Buffer {
 	
 	//Definimos el número máximo de elementos y la Lista donde almacenar los Emails
 	public final static int MAX_ELEMENTOS = 5;
 	private Queue<Email> cola = new LinkedList<>();
 	
+	public Buffer() {
+		super();
+	}
+
 	//El metodo para añadir mensajes está sincronizado
 	public synchronized void addMensaje(Email email){
 		

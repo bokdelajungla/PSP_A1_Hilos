@@ -1,5 +1,13 @@
 package requerimiento3;
 
+/**
+ * Clase que implementa un hilo que se encarga de recoger los mensajes del Buffer y muestra su contenido al recogerlo
+ * llamando a {@link Email#toString()}.
+ * 
+ * @author Jorge Sánchez-Alor Expósito, Adrian Rodriguez Montesinos, Antonio De Gea Velasco
+ *
+ */
+
 public class Consumidor implements Runnable {
 
 	private String nombre;

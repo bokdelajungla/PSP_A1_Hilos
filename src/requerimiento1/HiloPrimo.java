@@ -18,7 +18,7 @@ package requerimiento1;
  * el numero, el nombre del hilo que lo ha procesado, el tiempo que ha tardado en procesarlo
  * y si es primo o no, y en caso de que no sea primo muestra el menor divisor del numero.
  * 
- * @author Jorge Sánchez-Alor 
+ * @author Jorge Sánchez-Alor Expósito, Adrian Rodriguez Montesinos, Antonio De Gea Velasco
  *
  */
 public class HiloPrimo implements Runnable{
