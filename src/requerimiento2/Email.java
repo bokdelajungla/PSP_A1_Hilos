@@ -1,5 +1,10 @@
 package requerimiento2;
 
+/**
+ * 
+ * @author Jorge Sánchez-Alor Expósito
+ * 
+ */
 public class Email {
 	
 	private int id;
